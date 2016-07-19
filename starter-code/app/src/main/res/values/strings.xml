@@ -34,6 +34,12 @@
         <item>Re-organize spice rack</item>
         <item>Change curtains</item>
         <item>Set up speaker system</item>
+    </string-array>
 
+    <string-array name="interests">
+        <item>Final Fantasy</item>
+        <item>Red Sox</item>
+        <item>Bakemonogatari</item>
+        <item>Android</item>
     </string-array>
 </resources>

@@ -56,7 +56,7 @@ public class MainFragment extends Fragment {
         toolbar.setTitle("UserInfoTabs");
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager(), 3);
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager(), 4);
 
         mViewPager.setAdapter(mSectionsPagerAdapter);
 

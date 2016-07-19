@@ -21,6 +21,7 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position){
             //Complete this
+            case 3: return new InterestsListFragment()
             default: return new PlaceholderFragment();
         }
 
@@ -42,6 +43,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
                 return "ABOUT ME";
             case 2:
                 return "CONTACT";
+            case 3:
+                return "INTERESTS";
         }
 
     }
