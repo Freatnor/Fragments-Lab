@@ -13,8 +13,15 @@ import android.widget.TextView;
  */
 public class DetailFragment extends Fragment {
 
-    TextView mTextView;
-    String[] mInterests;
+    private TextView mTextView;
+    private String[] mInterests;
+    private int mPosition;
+
+    public static DetailFragment getInstance(int position){
+        DetailFragment fragment = new DetailFragment();
+        fragment.mPosition = position;
+        return fragment;
+    }
 
     @Nullable
     @Override
@@ -25,5 +32,9 @@ public class DetailFragment extends Fragment {
         return view;
     }
 
-
+    @Override
+    public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
+        mTextView.setText(getResources().getStringArray(R.array.interests)[mPosition]);
+        super.onViewCreated(view, savedInstanceState);
+    }
 }

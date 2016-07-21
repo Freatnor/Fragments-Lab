@@ -26,6 +26,7 @@ public class MainFragment extends Fragment {
      * {@link android.support.v4.app.FragmentStatePagerAdapter}.
      */
     private SectionsPagerAdapter mSectionsPagerAdapter;
+    private InterestsListFragment.OnInterestClickListener mListener;
 
     /**
      * The {@link ViewPager} that will host the section contents.
@@ -33,6 +34,12 @@ public class MainFragment extends Fragment {
     private ViewPager mViewPager;
     private TabLayout tabLayout;
     private Toolbar toolbar;
+
+    public static MainFragment getInstance(InterestsListFragment.OnInterestClickListener listener){
+        MainFragment fragment = new MainFragment();
+        fragment.mListener = listener;
+        return fragment;
+    }
 
     @Nullable
     @Override
@@ -56,7 +63,7 @@ public class MainFragment extends Fragment {
         toolbar.setTitle("UserInfoTabs");
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
-        mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager(), 4);
+        mSectionsPagerAdapter = new SectionsPagerAdapter(getFragmentManager(), 4, mListener);
 
         mViewPager.setAdapter(mSectionsPagerAdapter);
 

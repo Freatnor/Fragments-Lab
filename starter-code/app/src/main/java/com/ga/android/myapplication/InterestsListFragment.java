@@ -64,4 +64,4 @@ public class InterestsListFragment extends Fragment {
         });
     }
 }
-}
+

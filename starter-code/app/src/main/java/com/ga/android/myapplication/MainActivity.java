@@ -3,7 +3,7 @@ package com.ga.android.myapplication;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity implements {
+public class MainActivity extends AppCompatActivity implements InterestsListFragment.OnInterestClickListener {
 
 
     @Override
@@ -14,9 +14,14 @@ public class MainActivity extends AppCompatActivity implements {
         getSupportFragmentManager()
                 .beginTransaction()
                 .add(R.id.main_content_container,
-                        new MainFragment())
+                        MainFragment.getInstance(this))
                 .commit();
 
     }
 
+    @Override
+    public void onInterestClicked(int position) {
+        getSupportFragmentManager().beginTransaction().addToBackStack("Tabs").add(R.id.main_content_container, DetailFragment.getInstance(position), null)
+                .commit();
+    }
 }
